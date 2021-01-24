@@ -35,6 +35,7 @@ export type Options = {
   loaders?: {
     [ext: string]: Loader | false
   }
+  service?: Service
 }
 
 export default (options: Options = {}): Plugin => {
@@ -66,10 +67,10 @@ export default (options: Options = {}): Plugin => {
     options.exclude || EXCLUDE_REGEXP
   )
 
-  let service: Service | undefined
+  let service: Service | undefined = options.service
 
   const stopService = () => {
-    if (service) {
+    if (service && !options.service) {
       service.stop()
       service = undefined
     }
