@@ -1,5 +1,5 @@
 {
-  "name": "rollup-plugin-esbuild",
+  "name": "@akryum/rollup-plugin-esbuild",
   "version": "0.0.0-semantic-release",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
